@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Make some noise.</title>
+
+    <link rel="stylesheet" href="stylesheets/layout.css">
+    <script src="javascripts/channels.js" defer></script>
+    <script src="javascripts/script.js" defer></script>
+    <script src="javascripts/synthesizer.js" defer></script>
+</head>
+
+<body>
+    <div class="angels_background" aria-hidden="true">
+        <img class="background_angel background_angel_left" src="images/angel-left.svg" alt="" draggable="false">
+        <img class="background_angel background_angel_right" src="images/angel-right.svg" alt="" draggable="false">
+    </div>
+    <h1>MAKE SOME NOISE.</h1>
+
+    <main class="panels">
+
+    <section class="panel noise_01" aria-labelledby="title_01">
+    <header class="panel_header">
+        <p class="badge">01</p>
+
+        <div>
+        <h2 id="title_01">noise_01</h2>
+        <p class="description">ENVELOPE / WAVE / FX</p>
+        </div>
+
+        <span class="status" aria-hidden="true"></span>
+    </header>
+
+    <div class="envelope">
+        <h3>01 / ENVELOPE</h3>
+        <label class="slider">
+        <span>Attack</span>
+        <output>0.50 s</output>
+        <input type="range" min="0" max="2" step="0.5" value="0.5" data-unit="s">
+        </label>
+
+        <label class="slider">
+        <span>Decay</span>
+        <output>0.50 s</output>
+        <input type="range" min="0" max="2" step="0.5" value="0.5" data-unit="s">
+        </label>
+
+        <label class="slider">
+        <span>Sustain</span>
+        <output>50 %</output>
+        <input type="range" min="0" max="100" step="25" value="50" data-unit="%">
+        </label>
+
+        <label class="slider">
+        <span>Release</span>
+        <output>1.25 s</output>
+        <input type="range" min="0" max="5" step="1.25" value="1.25" data-unit="s">
+        </label>
+    </div>
+
+    <div class="waveform">
+        <h3>02 / WAVEFORM</h3>
+
+    <div class="wave_buttons">
+        <button type="button" class="sine" data-wave="sine" aria-pressed="false">
+        <img class="wave_icon" src="images/Sine.svg" alt="" aria-hidden="true" draggable="false">
+        Sine
+        </button>
+
+        <button type="button" class="pulse active" data-wave="pulse" aria-pressed="true">
+        <img class="wave_icon" src="images/Pulse.svg" alt="" aria-hidden="true" draggable="false">
+        Pulse
+        </button>
+
+        <button type="button" class="sawtooth" data-wave="sawtooth" aria-pressed="false">
+        <img class="wave_icon" src="images/Sawtooth.svg" alt="" aria-hidden="true" draggable="false">
+        Sawtooth
+        </button>
+
+        <button type="button" class="triangle" data-wave="triangle" aria-pressed="false">
+        <img class="wave_icon" src="images/Triangle.svg" alt="" aria-hidden="true" draggable="false">
+        Triangle
+        </button>
+    </div>
+    </div>
+
+    <div class="effects">
+        <h3>03 / EFFECTS</h3>
+
+    <div class="effect_controls">
+    <label class="effect">
+        <span>Chorus</span>
+        <span class="dial">
+        <input type="range" min="0" max="1" step="0.25" value="0.25">
+        </span>
+        <output>0.25</output>
+    </label>
+
+    <label class="effect">
+        <span>Delay</span>
+        <span class="dial">
+        <input type="range" min="0" max="1" step="0.25" value="0.25">
+        </span>
+        <output>0.25</output>
+    </label>
+
+    <label class="effect">
+        <span>Reverb</span>
+        <span class="dial">
+        <input type="range" min="0" max="1" step="0.25" value="0.50">
+        </span>
+        <output>0.50</output>
+    </label>
+    </div>
+    </div>
+</section>
+    <div class="center_column">
+        <section class="panel connect_panel" aria-label="Выбор канала">
+            <div class="angels_portrait" aria-hidden="true">
+                <img class="all-angels" src="images/all-angels-light.svg" alt="" draggable="false">
+
+                <img class="angel_overlay angel_overlay_left" src="images/leftAngel.svg" alt="" draggable="false">
+
+                <img class="angel_overlay angel_overlay_center" src="images/CenterAngel.svg" alt="" draggable="false">
+
+                <img class="angel_overlay angel_overlay_right" src="images/RightAngel.svg" alt="" draggable="false">
+            </div>
+
+            <h2 class="connect_title">sound.connect(you);</h2>
+            <p class="connect_description">SELECT CHANNEL</p>
+            <div class="channel_buttons" role="group" aria-label="Канал">
+                <button type="button" class="channel_button" data-channel="left" aria-pressed="false">Left</button>
+                <button type="button" class="channel_button active" data-channel="center" aria-pressed="true">Center</button>
+                <button type="button" class="channel_button" data-channel="right" aria-pressed="false">Right</button>
+            </div>
+        </section>
+
+        <section class="panel noise_03" aria-labelledby="title_03">
+            <header class="panel_header">
+                <p class="badge">03</p>
+                <div>
+                    <h2 id="title_03">noise_03</h2>
+                    <p class="description">CENTER / AUXILIARY</p>
+                </div>
+            </header>
+
+            <div class="aux_body">
+                <div class="aux_main">
+                    <div class="aux_envelope">
+                        <label class="slider aux_sustain">
+                            <span>Sustain</span>
+                            <output>50 %</output>
+                            <input type="range" min="0" max="100" step="25" value="50" data-unit="%">
+                        </label>
+
+                        <label class="slider aux_release">
+                            <span>Release</span>
+                            <output>1.25 s</output>
+                            <input type="range" min="0" max="5" step="1.25" value="1.25" data-unit="s">
+                        </label>
+                    </div>
+
+                    <div class="aux_waveform">
+                        <h3>WAVEFORM</h3>
+
+                        <div class="wave_buttons">
+                            <button type="button" data-wave="sine" aria-pressed="false">
+                                <img class="wave_icon" src="images/Sine.svg" alt="" aria-hidden="true" draggable="false">
+                                Sine
+                            </button>
+
+                            <button type="button" class="active" data-wave="triangle" aria-pressed="true">
+                                <img class="wave_icon" src="images/Triangle.svg" alt="" aria-hidden="true" draggable="false">
+                                Tri
+                            </button>
+                        </div>
+                    </div>
+
+                    <p class="aux_note">// less noise? more signal?</p>
+                </div>
+
+                <div class="aux_effects">
+                    <label class="effect">
+                        <span>Chorus</span>
+                        <span class="dial">
+                            <input type="range" min="0" max="1" step="0.25" value="0.25">
+                        </span>
+                        <output>0.25</output>
+                    </label>
+
+                    <label class="effect">
+                        <span>Delay</span>
+                        <span class="dial">
+                            <input type="range" min="0" max="1" step="0.25" value="0.25">
+                        </span>
+                        <output>0.25</output>
+                    </label>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="panel noise_02" aria-labelledby="title_02">
+    <header class="panel_header">
+    <p class="badge">02</p>
+
+    <div>
+        <h2 id="title_02">noise_02</h2>
+        <p class="description">ENVELOPE / WAVE / FX</p>
+    </div>
+
+    <span class="status" aria-hidden="true"></span>
+    </header> 
+
+    <div class="envelope">
+        <h3>01 / ENVELOPE</h3>
+
+        <label class="slider">
+        <span>Attack</span>
+        <output>0.50 s</output>
+        <input type="range" min="0" max="2" step="0.5" value="0.5" data-unit="s">
+        </label>
+
+        <label class="slider">
+        <span>Decay</span>
+        <output>0.50 s</output>
+        <input type="range" min="0" max="2" step="0.5" value="0.5" data-unit="s">
+        </label>
+
+        <label class="slider">
+        <span>Sustain</span>
+        <output>50 %</output>
+        <input type="range" min="0" max="100" step="25" value="50" data-unit="%">
+        </label>
+
+        <label class="slider">
+        <span>Release</span>
+        <output>1.25 s</output>
+        <input type="range" min="0" max="5" step="1.25" value="1.25" data-unit="s">
+        </label>
+    </div>
+
+    <div class="waveform">
+        <h3>02 / WAVEFORM</h3>
+
+    <div class="wave_buttons">
+    <button type="button" class="sine active" data-wave="sine" aria-pressed="true">
+        <img class="wave_icon" src="images/Sine.svg" alt="" aria-hidden="true" draggable="false">
+        Sine
+    </button>
+
+    <button type="button" class="pulse" data-wave="pulse" aria-pressed="false">
+        <img class="wave_icon" src="images/Pulse.svg" alt="" aria-hidden="true" draggable="false">
+        Pulse
+    </button>
+
+    <button type="button" class="sawtooth" data-wave="sawtooth" aria-pressed="false">
+        <img class="wave_icon" src="images/Sawtooth.svg" alt="" aria-hidden="true" draggable="false">
+        Sawtooth
+    </button>
+
+    <button type="button" class="triangle" data-wave="triangle" aria-pressed="false">
+        <img class="wave_icon" src="images/Triangle.svg" alt="" aria-hidden="true" draggable="false">
+        Triangle
+    </button>
+    </div>
+    </div>
+
+    <div class="effects">
+        <h3>03 / EFFECTS</h3>
+
+        <div class="effect_controls">
+        <label class="effect">
+        <span>Chorus</span>
+        <span class="dial">
+            <input type="range" min="0" max="1" step="0.25" value="0.25">
+        </span>
+        <output>0.25</output>
+        </label>
+
+        <label class="effect">
+        <span>Delay</span>
+        <span class="dial">
+            <input type="range" min="0" max="1" step="0.25" value="0.25">
+        </span>
+        <output>0.25</output>
+        </label>
+
+        <label class="effect">
+        <span>Reverb</span>
+        <span class="dial">
+            <input type="range" min="0" max="1" step="0.25" value="0.50">
+        </span>
+        <output>0.50</output>
+        </label>
+        </div>
+    </div>
+    </section>
+    </main>
+</body>
+</html>
