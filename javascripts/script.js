@@ -248,7 +248,6 @@
         }
     };
 
-    // Инициализация всего интерфейса
     function init() {
         document.querySelectorAll(
             ".noise_01, .noise_02, .noise_03"
